@@ -1,0 +1,108 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('initial_background.jpg'); /* 초기 배경이미지 */
+    background-size: auto; /* 원래 이미지 크기 유지 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+    background-repeat: no-repeat; /* 배경 이미지 반복하지 않음 */
+}
+
+/* 비밀번호 입력창과 안내창 박스 스타일 */
+.box {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: inline-block; /* 텍스트 박스 크기 조정 */
+    position: relative;
+    max-width: 90%; /* 화면 크기에 따라 조정 */
+    text-align: center; /* 박스 내 텍스트 중앙 정렬 */
+    width: 500px; /* 가로 길이를 500px로 설정 */
+}
+
+/* 초기 화면 스타일 */
+#initial-screen {
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 20px; /* 안내 텍스트와 비밀번호 입력창 간격 설정 */
+}
+
+/* 비밀번호 입력창 스타일 */
+#password {
+    padding: 10px;
+    border: 2px solid #000;
+    background-color: #fff; /* 하얀색 입력창 */
+    color: #000;
+}
+
+/* 안내 문구와 '자세히 살펴보기' 버튼 화면 스타일 */
+#info-screen {
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 20px; /* 버튼과 텍스트 간격 설정 */
+}
+
+/* '자세히 살펴보기' 버튼 스타일 */
+#info-screen button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* 버튼 배경색을 흰색으로 변경 */
+    color: #000; /* 버튼 글씨색을 검은색으로 변경 */
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto; /* 버튼을 중앙에 배치하고 텍스트와 버튼 간 간격 설정 */
+}
+
+/* 슬라이드쇼 스타일 */
+#photo-screen {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* 흐려진 배경 */
+}
+
+#photo-screen img {
+    max-width: 90%;
+    max-height: 80vh;
+    display: block; /* 이미지 블록 표시 */
+    margin: 0 auto; /* 이미지 중앙 배치 */
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#prev {
+    left: 10px;
+    display: none; /* 초기 상태에서 왼쪽 화살표 버튼 숨김 */
+}
+
+#next {
+    right: 10px;
+}
+
+#photo-screen.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
