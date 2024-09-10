@@ -23,9 +23,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: inline-block; /* 텍스트 박스 크기 조정 */
     position: relative;
-    max-width: 90%; /* 화면 크기에 따라 조정 */
+    width: 100%; /* 박스 너비를 화면에 맞게 조정 */
+    max-width: 600px; /* 최대 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
     text-align: center; /* 박스 내 텍스트 중앙 정렬 */
-    width: 500px; /* 가로 길이를 500px로 설정 */
 }
 
 /* 초기 화면 스타일 */
@@ -41,6 +42,8 @@ body {
     border: 2px solid #000;
     background-color: #fff; /* 하얀색 입력창 */
     color: #000;
+    width: calc(100% - 20px); /* 박스 내부 여백을 고려한 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
 }
 
 /* 안내 문구와 '자세히 살펴보기' 버튼 화면 스타일 */
