@@ -1,37 +1,103 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>비밀번호 화면</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- 비밀번호 입력 화면 -->
-  <div id="lockscreen">
-    <div id="initial-screen" class="box">
-      <p>책상 서랍이 잠겨 있다. 열쇠로 열어야 할 것 같다.</p>
-      <input type="password" id="password" placeholder="사용할 열쇠의 번호를 입력하세요" style="width: 300px;">
-      <button onclick="checkPassword()">확인</button>
-    </div>
-  </div>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('initial_background.jpg'); /* 초기 배경이미지 */
+    background-size: contain; /* 배경 이미지가 화면에 맞게 조정됨 */
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-  <!-- 안내창 -->
-  <div id="info-screen" class="box hidden">
-    <p>책상 서랍이 열렸다.서랍 안에는 사진이 들어 있다. </p>
-    <button onclick="showPhoto(1)">자세히 살펴보기</button>
-  </div>
+/* 비밀번호 입력창과 안내창 박스 스타일 */
+.box {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%; /* 화면 크기에 맞게 조정 */
+    max-width: 500px; /* 최대 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
+    display: flex;
+    flex-direction: column; /* 내부 요소를 세로 방향으로 배치 */
+    justify-content: center; /* 내부 요소를 중앙 정렬 */
+    align-items: center; /* 내부 요소를 중앙 정렬 */
+}
 
-  <!-- 사진 슬라이드쇼 화면 -->
-  <div id="photo-screen" class="hidden">
-    <button id="prev" onclick="prevPhoto()">◄</button>
-    <img id="photo" src="photo1.jpg" alt="사진">
-    <button id="next" onclick="nextPhoto()">►</button>
-  </div>
+/* 비밀번호 입력창 스타일 */
+#password {
+    padding: 10px;
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    width: 100%; /* 부모 박스의 너비에 맞게 조정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
+    margin-bottom: 10px;
+}
 
-  <script src="script.js"></script>
-</body>
+/* 안내 문구와 '영상 재생' 버튼 화면 스타일 */
+#info-screen {
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 20px; /* 버튼과 텍스트 간격 설정 */
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* '자세히 살펴보기' 버튼 스타일 */
+#info-screen button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto; /* 버튼을 중앙에 배치하고 텍스트와 버튼 간 간격 설정 */
+}
 
-</html>
+/* 팝업 스타일 */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%; /* 화면 크기에 맞게 조정 */
+    max-width: 700px; /* 최대 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
+}
+
+.popup-content video {
+    width: 100%; /* 부모 박스의 너비에 맞게 조정 */
+    height: auto; /* 비율 유지 */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 숨김 클래스 */
+.hidden {
+    display: none;
+}
