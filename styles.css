@@ -24,10 +24,11 @@ body {
     display: flex;
     flex-direction: column; /* 세로 방향으로 정렬 */
     align-items: center; /* 중앙 정렬 */
-    width: 90%; /* 화면 크기에 맞게 조정 */
+    width: 100%; /* 박스 너비를 화면에 맞게 조정 */
     max-width: 600px; /* 최대 너비 설정 */
     box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
     text-align: center; /* 텍스트 중앙 정렬 */
+    margin: 0 auto; /* 중앙 정렬을 위한 마진 설정 */
 }
 
 /* 비밀번호 입력창 스타일 */
@@ -36,7 +37,7 @@ body {
     border: 2px solid #000;
     background-color: #fff; /* 하얀색 입력창 */
     color: #000;
-    width: 100%; /* 부모 박스의 너비에 맞게 조정 */
+    width: calc(100% - 20px); /* 박스 내부 여백을 고려한 너비 설정 */
     box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 계산 */
     margin-bottom: 10px; /* 입력창과 다른 요소 간의 간격 설정 */
 }
