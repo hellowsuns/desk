@@ -9,7 +9,7 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     background-image: url('initial_background.jpg'); /* 초기 배경이미지 */
-    background-size: auto; /* 원래 이미지 크기 유지 */
+    background-size: contain; /* 배경 이미지가 화면에 맞춰 축소 또는 확대됨 */
     background-position: center; /* 배경 이미지 중앙 정렬 */
     background-repeat: no-repeat; /* 배경 이미지 반복하지 않음 */
 }
